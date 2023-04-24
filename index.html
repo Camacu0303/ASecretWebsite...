@@ -26,20 +26,35 @@
 
   <body>
     <h1>Para ti</h1>
-    <canvas id="myCanvas" width="300" height="300"></canvas>
+   <canvas id="canvas" width="400" height="400" x="50" y="30"></canvas>
     
     <script>
-  var canvas = document.getElementById("myCanvas");
-  var ctx = canvas.getContext("2d");
-  ctx.fillStyle = "#F15A22";
-  ctx.beginPath();
-  ctx.moveTo(150, 75);
-  ctx.quadraticCurveTo(120, 10, 75, 90);
-  ctx.quadraticCurveTo(10, 175, 150, 275);
-  ctx.quadraticCurveTo(290, 175, 225, 90);
-  ctx.quadraticCurveTo(180, 10, 150, 75);
-  ctx.closePath();
-  ctx.fill();
+        canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    canvas.x = 150;
+    canvas.y = 150;
+    var w = 200, h = 200;
+    context.strokeStyle = "#000000";
+    context.strokeWeight = 3;
+    context.shadowOffsetX = 4.0;
+    context.shadowOffsetY = 4.0;
+    context.lineWidth = 10.0;
+    context.fillStyle = "#FF0000";
+    var d = Math.min(w, h);
+    var k = 120;
+    context.moveTo(k, k + d / 4);
+    context.quadraticCurveTo(k, k, k + d / 4, k);
+    context.quadraticCurveTo(k + d / 2, k, k + d / 2, k + d / 4);
+    context.quadraticCurveTo(k + d / 2, k, k + d * 3/4, k);
+    context.quadraticCurveTo(k + d, k, k + d, k + d / 4);
+    context.quadraticCurveTo(k + d, k + d / 2, k + d * 3/4, k + d * 3/4);
+    context.lineTo(k + d / 2, k + d);
+    context.lineTo(k + d / 4, k + d * 3/4);
+    context.quadraticCurveTo(k, k + d / 2, k, k + d / 4);
+    context.stroke();
+    context.fill();
+}//]]>  
+</script>
 </script>
 
   </body>
