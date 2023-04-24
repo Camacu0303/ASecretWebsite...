@@ -21,6 +21,16 @@
         display: block;
         margin: 50px auto 0;
       }
+      canvas {
+  width: 400px;
+  height: 400px;
+  transition: all 1s ease;
+}
+
+canvas.small {
+  width: 200px;
+  height: 200px;
+}
     </style>
   </head>
 
@@ -53,8 +63,10 @@
     context.quadraticCurveTo(k, k + d / 2, k, k + d / 4);
     context.stroke();
     context.fill();
-
-</script>
+      var canvas = document.getElementById("canvas");
+setInterval(function() {
+  canvas.classList.toggle("small");
+}, 5000);
 </script>
 
   </body>
