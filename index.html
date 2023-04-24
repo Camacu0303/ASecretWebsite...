@@ -29,16 +29,18 @@
     <canvas id="myCanvas" width="300" height="300"></canvas>
     
     <script>
-      var canvas = document.getElementById("myCanvas");
-      var ctx = canvas.getContext("2d");
-      ctx.fillStyle = "#F15A22";
-      ctx.beginPath();
-      ctx.moveTo(150, 75);
-      ctx.lineTo(225, 150);
-      ctx.lineTo(150, 225);
-      ctx.lineTo(75, 150);
-      ctx.closePath();
-      ctx.fill();
-    </script>
+  var canvas = document.getElementById("myCanvas");
+  var ctx = canvas.getContext("2d");
+  ctx.fillStyle = "#F15A22";
+  ctx.beginPath();
+  ctx.moveTo(150, 75);
+  ctx.quadraticCurveTo(120, 10, 75, 90);
+  ctx.quadraticCurveTo(10, 175, 150, 275);
+  ctx.quadraticCurveTo(290, 175, 225, 90);
+  ctx.quadraticCurveTo(180, 10, 150, 75);
+  ctx.closePath();
+  ctx.fill();
+</script>
+
   </body>
 </html>
