@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cute Website</title>
+    <style>
+      body {
+        background-color: #FED8B1;
+        font-family: 'Helvetica Neue', sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        color: #F15A22;
+        font-size: 48px;
+        margin-top: 100px;
+      }
+
+      canvas {
+        display: block;
+        margin: 50px auto 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Welcome to my cute website!</h1>
+    <canvas id="myCanvas" width="300" height="300"></canvas>
+    
+    <script>
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#F15A22";
+      ctx.beginPath();
+      ctx.moveTo(150, 75);
+      ctx.lineTo(225, 150);
+      ctx.lineTo(150, 225);
+      ctx.lineTo(75, 150);
+      ctx.closePath();
+      ctx.fill();
+    </script>
+  </body>
+</html>
